@@ -22,7 +22,7 @@ function setup() {
     ball1 = new Ball(Math.round(random(800,1100)),Math.round(random(200,400)),20);
     ball2 = new Ball(Math.round(random(800,1100)),Math.round(random(200,400)),20);
     ball3 = new Ball(Math.round(random(800,1100)),Math.round(random(200,400)),20);
-    array1.push(new CanonBall(part1.x ,part1.y));
+    array1.push( canonball1 =new CanonBall(part1.x ,part1.y));
 }
 
 function draw() {
@@ -51,5 +51,9 @@ function keyReleased() {
         for(var i = 0;i<array1.length;i++){
             array1[i].display();
         }
+    canonball1.velocityY = -2;
+    canonball1.velocityX = 2;
+
+
     }
 }
