@@ -10,7 +10,6 @@ is the same as c
 onst Engine = Matter.Engine
 
 */
-var angl = -45;
 
 function setup() {
     // Setup the canvas, the ground the, tanker, the shooting ball and the bubble balls.
@@ -18,7 +17,7 @@ function setup() {
     engine = Engine.create();
     world = engine.world;
     ground = new Ground(600,590,1200,20);
-     part1 = new tankerhead (175,470,100,50,angl);
+    part1 = new part(175,470,100,50,-45);
     base = new tanker(100,530,100,100);
     ball1 = new Ball(Math.round(random(800,1100)),Math.round(random(200,400)),20);
     ball2 = new Ball(Math.round(random(800,1100)),Math.round(random(200,400)),20);
@@ -42,13 +41,13 @@ ball3.display();
 
 function keyReleased() {
     // Call the shoot method for the cannon.
-    if(keyCode === UP_ARROW && angl>-90){
-        angl-=1.8;
+    if(keyCode === UP_ARROW && part1.angle>-90){
+        part1.angle-=1.8;
     }
-    if(keyCode === DOWN_ARROW && angl>5){
-        angl+=1.6;
+    if(keyCode === DOWN_ARROW && part1.angle>5){
+        part1.angle+=1.6;
     }
-    if(keyCode === RIGHT_ARROW && angl>5){
+    if(keyCode === RIGHT_ARROW ){
         for(var i = 0;i<array1.length;i++){
             array1[i].display();
         }
